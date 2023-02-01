@@ -6,7 +6,7 @@ let taskList = [];
 let badList = [];
 let invalidChars = ["+", "-", "e", "E"];
 
-const hrsPerWeek = 168;
+const hrsPerWeek = 24 * 7;
 
 const invalid = document.querySelector(".hrs-input");
 invalid.addEventListener("keydown", (e) => {
@@ -27,7 +27,7 @@ document.querySelector("#form-submit").addEventListener("click", (e) => {
   const totalAllocatedHrs = totalTaskHours();
 
   console.log(totalAllocatedHrs);
-  if (totalAllocatedHrs + hr > hrsPerWeek) {
+  if (totalAllocatedHrs + +hr > hrsPerWeek) {
     return alert(
       "Sorry, your do not have enough time to add more taks this week"
     );
